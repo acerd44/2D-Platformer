@@ -15,7 +15,6 @@ const Player = function (color) { // player object
     this.score = 0;
     this.scub = 0;
     this.deathSound = true; // play deathSound when dead
-    this.deth = new Audio("./zappa.mp3", 0.7); // death sound
     this.zone = undefined; // current zone
     this.objective; // objective
     this.objectiveStatus = "red"; // status of objective (red = incomplete, green = complete, black = not really an objective, just what to do)
@@ -233,7 +232,6 @@ Player.prototype = { // functions
             text(6.6 * 64, 6 * 64, 50, "GAME OVER", "black");
             text(4 * 64, 7 * 64, 50, "PRESS R TO RESTART", "black");
             if (this.deathSound) {
-                this.deth.play();
                 this.deathSound = false;
             }
         }
